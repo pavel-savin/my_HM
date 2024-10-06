@@ -36,7 +36,7 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='post')
     article_or_news = models.IntegerField(default= 0)
     automatic_data_time = models.DateTimeField(auto_now_add= True)
-    post_category = models.ManyToManyField(Category, through= 'Post_Category')
+    post_category = models.ManyToManyField(Category, through= 'PostCategory')
     article_title_news = models.CharField(max_length= 255, db_index=True) #добавлено индексирование
     text_title_news = models.TextField()
     rating = models.IntegerField(default=0)
